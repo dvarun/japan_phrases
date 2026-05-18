@@ -19,8 +19,8 @@ const { phrases } = Astro.props;
     {phrases.map((p) => (
       <a href={`#card-${p.id}`} class="survival__card" aria-label={`${p.english}: ${p.romaji}`}>
         <div class="survival__card-en">{p.english}</div>
-        <div class="survival__card-jp jp-text">{p.japanese}</div>
         <div class="survival__card-romaji">{p.romaji}</div>
+        <div class="survival__card-jp jp-text">{p.japanese}</div>
       </a>
     ))}
   </div>

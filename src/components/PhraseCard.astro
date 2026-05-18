@@ -15,8 +15,8 @@ const { id, english, japanese, romaji, note } = Astro.props;
     <span class="phrase-card__english">{english}</span>
     <button class="phrase-card__fav" data-fav-id={id} aria-label={`Add ${english} to favorites`} type="button">♡</button>
   </div>
-  <div class="phrase-card__japanese jp-text">{japanese}</div>
   <div class="phrase-card__romaji">{romaji}</div>
+  <div class="phrase-card__japanese jp-text">{japanese}</div>
   {note && <div class="phrase-card__note">{note}</div>}
   <div class="phrase-card__actions">
     <button class="phrase-card__copy" data-copy={`${japanese}\n${romaji}`} type="button">
