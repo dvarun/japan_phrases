@@ -1,0 +1,27 @@
+---
+interface Phrase {
+  id: string;
+  english: string;
+  japanese: string;
+  romaji: string;
+}
+
+interface Props {
+  phrases: Phrase[];
+}
+
+const { phrases } = Astro.props;
+---
+
+<section class="survival" aria-label="Tourist Survival Mode">
+  <h2 class="survival__title">🌟 Tourist Survival Mode</h2>
+  <div class="survival__scroll">
+    {phrases.map((p) => (
+      <a href={`#card-${p.id}`} class="survival__card" aria-label={`${p.english}: ${p.romaji}`}>
+        <div class="survival__card-en">{p.english}</div>
+        <div class="survival__card-jp jp-text">{p.japanese}</div>
+        <div class="survival__card-romaji">{p.romaji}</div>
+      </a>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,31 @@
+---
+const categories = [
+  { id: 'greetings', label: 'Greetings', emoji: '👋' },
+  { id: 'apologies', label: 'Help', emoji: '🙏' },
+  { id: 'restaurants', label: 'Food', emoji: '🍜' },
+  { id: 'shopping', label: 'Shopping', emoji: '🛍️' },
+  { id: 'transport', label: 'Transport', emoji: '🚃' },
+  { id: 'hotel', label: 'Hotel', emoji: '🏨' },
+  { id: 'emergency', label: 'Emergency', emoji: '🚨' },
+  { id: 'numbers', label: 'Numbers', emoji: '🔢' },
+];
+---
+
+<nav class="category-nav" aria-label="Phrase categories">
+  <ul class="category-nav__list" role="tablist">
+    {categories.map((cat) => (
+      <li role="presentation">
+        <a
+          href={`#${cat.id}`}
+          class="category-nav__tab"
+          role="tab"
+          data-category={cat.id}
+          aria-label={cat.label}
+        >
+          <span class="category-nav__emoji" aria-hidden="true">{cat.emoji}</span>
+          {cat.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

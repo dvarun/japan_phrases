@@ -1,0 +1,16 @@
+{
+  "name": "Japan Phrasebook",
+  "short_name": "JP Phrases",
+  "description": "A cute travel phrasebook for tourists visiting Japan",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF8F0",
+  "theme_color": "#E8A0BF",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

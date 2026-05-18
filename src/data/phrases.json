@@ -1,0 +1,738 @@
+[
+  {
+    "id": "greet-01",
+    "category": "greetings",
+    "english": "Hello",
+    "japanese": "こんにちは",
+    "romaji": "Konnichiwa",
+    "note": "The most common greeting, used from late morning to evening.",
+    "survival": true
+  },
+  {
+    "id": "greet-02",
+    "category": "greetings",
+    "english": "Good morning",
+    "japanese": "おはようございます",
+    "romaji": "Ohayou gozaimasu",
+    "note": "Polite morning greeting, used until around 10am.",
+    "survival": false
+  },
+  {
+    "id": "greet-03",
+    "category": "greetings",
+    "english": "Good evening",
+    "japanese": "こんばんは",
+    "romaji": "Konbanwa",
+    "note": "Used from late afternoon into the night.",
+    "survival": false
+  },
+  {
+    "id": "greet-04",
+    "category": "greetings",
+    "english": "Thank you",
+    "japanese": "ありがとうございます",
+    "romaji": "Arigatou gozaimasu",
+    "note": "Polite thank you. Use this one — it's never wrong.",
+    "survival": true
+  },
+  {
+    "id": "greet-05",
+    "category": "greetings",
+    "english": "Excuse me",
+    "japanese": "すみません",
+    "romaji": "Sumimasen",
+    "note": "Use to get attention, apologize lightly, or say 'excuse me'.",
+    "survival": true
+  },
+  {
+    "id": "greet-06",
+    "category": "greetings",
+    "english": "Please",
+    "japanese": "おねがいします",
+    "romaji": "Onegai shimasu",
+    "note": "Add after a request to be polite. Very versatile.",
+    "survival": true
+  },
+  {
+    "id": "greet-07",
+    "category": "greetings",
+    "english": "Yes",
+    "japanese": "はい",
+    "romaji": "Hai",
+    "note": "Simple and polite yes.",
+    "survival": false
+  },
+  {
+    "id": "greet-08",
+    "category": "greetings",
+    "english": "No",
+    "japanese": "いいえ",
+    "romaji": "Iie",
+    "note": "Polite no. In casual speech, just shake your head gently.",
+    "survival": false
+  },
+  {
+    "id": "greet-09",
+    "category": "greetings",
+    "english": "I understand",
+    "japanese": "わかりました",
+    "romaji": "Wakarimashita",
+    "note": "Literally 'I understood'. Shows you've got it.",
+    "survival": false
+  },
+  {
+    "id": "greet-10",
+    "category": "greetings",
+    "english": "I don't understand",
+    "japanese": "わかりません",
+    "romaji": "Wakarimasen",
+    "note": "Very useful when someone speaks too fast.",
+    "survival": true
+  },
+  {
+    "id": "greet-11",
+    "category": "greetings",
+    "english": "Goodbye",
+    "japanese": "さようなら",
+    "romaji": "Sayounara",
+    "note": "Formal goodbye. For casual, try 'Ja ne' or just bow.",
+    "survival": false
+  },
+
+  {
+    "id": "apol-01",
+    "category": "apologies",
+    "english": "Sorry",
+    "japanese": "ごめんなさい",
+    "romaji": "Gomen nasai",
+    "note": "A sincere apology. For lighter situations use 'sumimasen'.",
+    "survival": false
+  },
+  {
+    "id": "apol-02",
+    "category": "apologies",
+    "english": "Excuse me (passing through)",
+    "japanese": "すみません、通ります",
+    "romaji": "Sumimasen, toorimasu",
+    "note": "Use in crowds or on packed trains.",
+    "survival": false
+  },
+  {
+    "id": "apol-03",
+    "category": "apologies",
+    "english": "Can you help me?",
+    "japanese": "たすけてもらえますか？",
+    "romaji": "Tasukete moraemasu ka?",
+    "note": "Polite way to ask for help from a stranger.",
+    "survival": false
+  },
+  {
+    "id": "apol-04",
+    "category": "apologies",
+    "english": "I don't speak Japanese",
+    "japanese": "にほんごがはなせません",
+    "romaji": "Nihongo ga hanasemasen",
+    "note": "Usually understood — people will try to help anyway.",
+    "survival": true
+  },
+  {
+    "id": "apol-05",
+    "category": "apologies",
+    "english": "Please speak slowly",
+    "japanese": "ゆっくりはなしてください",
+    "romaji": "Yukkuri hanashite kudasai",
+    "note": "Very helpful when someone is trying to explain something.",
+    "survival": false
+  },
+  {
+    "id": "apol-06",
+    "category": "apologies",
+    "english": "Can you say that again?",
+    "japanese": "もういちどおねがいします",
+    "romaji": "Mou ichido onegai shimasu",
+    "note": "Politely asks someone to repeat themselves.",
+    "survival": false
+  },
+  {
+    "id": "apol-07",
+    "category": "apologies",
+    "english": "Is English okay?",
+    "japanese": "えいごはだいじょうぶですか？",
+    "romaji": "Eigo wa daijoubu desu ka?",
+    "note": "Ask before switching to English. Many people know some.",
+    "survival": false
+  },
+
+  {
+    "id": "rest-01",
+    "category": "restaurants",
+    "english": "Table for one, please",
+    "japanese": "ひとりです",
+    "romaji": "Hitori desu",
+    "note": "Just say the number of people. Simple and understood.",
+    "survival": false
+  },
+  {
+    "id": "rest-02",
+    "category": "restaurants",
+    "english": "Table for two, please",
+    "japanese": "ふたりです",
+    "romaji": "Futari desu",
+    "note": "Hold up two fingers to be extra clear.",
+    "survival": false
+  },
+  {
+    "id": "rest-03",
+    "category": "restaurants",
+    "english": "Do you have an English menu?",
+    "japanese": "えいごのメニューはありますか？",
+    "romaji": "Eigo no menyuu wa arimasu ka?",
+    "note": "Many tourist-area restaurants have one.",
+    "survival": false
+  },
+  {
+    "id": "rest-04",
+    "category": "restaurants",
+    "english": "I would like this, please",
+    "japanese": "これをおねがいします",
+    "romaji": "Kore wo onegai shimasu",
+    "note": "Point at the menu or food display and say this.",
+    "survival": true
+  },
+  {
+    "id": "rest-05",
+    "category": "restaurants",
+    "english": "What do you recommend?",
+    "japanese": "おすすめはなんですか？",
+    "romaji": "Osusume wa nan desu ka?",
+    "note": "Great for trying local specialties.",
+    "survival": false
+  },
+  {
+    "id": "rest-06",
+    "category": "restaurants",
+    "english": "No meat, please",
+    "japanese": "にくなしでおねがいします",
+    "romaji": "Niku nashi de onegai shimasu",
+    "note": "Useful for vegetarians. 'Niku' means meat.",
+    "survival": false
+  },
+  {
+    "id": "rest-07",
+    "category": "restaurants",
+    "english": "No pork, please",
+    "japanese": "ぶたにくなしでおねがいします",
+    "romaji": "Butaniku nashi de onegai shimasu",
+    "note": "'Butaniku' is pork specifically.",
+    "survival": false
+  },
+  {
+    "id": "rest-08",
+    "category": "restaurants",
+    "english": "Water, please",
+    "japanese": "おみずをください",
+    "romaji": "Omizu wo kudasai",
+    "note": "Water is usually free in Japanese restaurants.",
+    "survival": false
+  },
+  {
+    "id": "rest-09",
+    "category": "restaurants",
+    "english": "The bill, please",
+    "japanese": "おかいけいおねがいします",
+    "romaji": "Okaikei onegai shimasu",
+    "note": "You usually pay at the register, not at the table.",
+    "survival": true
+  },
+  {
+    "id": "rest-10",
+    "category": "restaurants",
+    "english": "Can I pay by card?",
+    "japanese": "カードではらえますか？",
+    "romaji": "Kaado de haraemasu ka?",
+    "note": "Cash is still common in Japan. Always good to ask.",
+    "survival": false
+  },
+  {
+    "id": "rest-11",
+    "category": "restaurants",
+    "english": "It was delicious!",
+    "japanese": "おいしかったです！",
+    "romaji": "Oishikatta desu!",
+    "note": "A great compliment — staff will really appreciate it.",
+    "survival": false
+  },
+
+  {
+    "id": "shop-01",
+    "category": "shopping",
+    "english": "How much is this?",
+    "japanese": "これはいくらですか？",
+    "romaji": "Kore wa ikura desu ka?",
+    "note": "Point at the item while asking.",
+    "survival": true
+  },
+  {
+    "id": "shop-02",
+    "category": "shopping",
+    "english": "Do you have a bag?",
+    "japanese": "ふくろはありますか？",
+    "romaji": "Fukuro wa arimasu ka?",
+    "note": "Bags usually cost a few yen in convenience stores.",
+    "survival": false
+  },
+  {
+    "id": "shop-03",
+    "category": "shopping",
+    "english": "No bag needed",
+    "japanese": "ふくろはいりません",
+    "romaji": "Fukuro wa irimasen",
+    "note": "Eco-friendly and appreciated!",
+    "survival": false
+  },
+  {
+    "id": "shop-04",
+    "category": "shopping",
+    "english": "Can I pay by card?",
+    "japanese": "カードではらえますか？",
+    "romaji": "Kaado de haraemasu ka?",
+    "note": "Most convenience stores accept cards and IC cards.",
+    "survival": false
+  },
+  {
+    "id": "shop-05",
+    "category": "shopping",
+    "english": "Can I use IC card?",
+    "japanese": "ICカードはつかえますか？",
+    "romaji": "IC kaado wa tsukaemasu ka?",
+    "note": "Suica, Pasmo, ICOCA — they work almost everywhere.",
+    "survival": false
+  },
+  {
+    "id": "shop-06",
+    "category": "shopping",
+    "english": "Receipt, please",
+    "japanese": "レシートをおねがいします",
+    "romaji": "Reshiito wo onegai shimasu",
+    "note": "Useful for tax-free purchases or expense tracking.",
+    "survival": false
+  },
+  {
+    "id": "shop-07",
+    "category": "shopping",
+    "english": "I'm just looking",
+    "japanese": "みているだけです",
+    "romaji": "Miteiru dake desu",
+    "note": "Politely declines help from shop staff.",
+    "survival": false
+  },
+  {
+    "id": "shop-08",
+    "category": "shopping",
+    "english": "Where is this item?",
+    "japanese": "これはどこですか？",
+    "romaji": "Kore wa doko desu ka?",
+    "note": "Show a photo or point at what you're looking for.",
+    "survival": false
+  },
+
+  {
+    "id": "trans-01",
+    "category": "transport",
+    "english": "Where is the station?",
+    "japanese": "えきはどこですか？",
+    "romaji": "Eki wa doko desu ka?",
+    "note": "'Eki' means train station.",
+    "survival": false
+  },
+  {
+    "id": "trans-02",
+    "category": "transport",
+    "english": "Which platform?",
+    "japanese": "なんばんせんですか？",
+    "romaji": "Nanban-sen desu ka?",
+    "note": "Ask at the ticket gate or information counter.",
+    "survival": false
+  },
+  {
+    "id": "trans-03",
+    "category": "transport",
+    "english": "Does this train go to ___?",
+    "japanese": "このでんしゃは___にいきますか？",
+    "romaji": "Kono densha wa ___ ni ikimasu ka?",
+    "note": "Fill in the station name. Showing it written helps.",
+    "survival": false
+  },
+  {
+    "id": "trans-04",
+    "category": "transport",
+    "english": "I want to go to ___",
+    "japanese": "___にいきたいです",
+    "romaji": "___ ni ikitai desu",
+    "note": "Say the place name first, then 'ni ikitai desu'.",
+    "survival": true
+  },
+  {
+    "id": "trans-05",
+    "category": "transport",
+    "english": "Please take me to ___",
+    "japanese": "___までおねがいします",
+    "romaji": "___ made onegai shimasu",
+    "note": "Perfect for taxis. Show the address on your phone.",
+    "survival": false
+  },
+  {
+    "id": "trans-06",
+    "category": "transport",
+    "english": "How long does it take?",
+    "japanese": "どのくらいかかりますか？",
+    "romaji": "Dono kurai kakarimasu ka?",
+    "note": "Works for travel time, waiting time, or walking time.",
+    "survival": false
+  },
+  {
+    "id": "trans-07",
+    "category": "transport",
+    "english": "Is it far?",
+    "japanese": "とおいですか？",
+    "romaji": "Tooi desu ka?",
+    "note": "Useful when deciding whether to walk or take a taxi.",
+    "survival": false
+  },
+  {
+    "id": "trans-08",
+    "category": "transport",
+    "english": "Turn left",
+    "japanese": "ひだりにまがってください",
+    "romaji": "Hidari ni magatte kudasai",
+    "note": "'Hidari' means left.",
+    "survival": false
+  },
+  {
+    "id": "trans-09",
+    "category": "transport",
+    "english": "Turn right",
+    "japanese": "みぎにまがってください",
+    "romaji": "Migi ni magatte kudasai",
+    "note": "'Migi' means right.",
+    "survival": false
+  },
+  {
+    "id": "trans-10",
+    "category": "transport",
+    "english": "Go straight",
+    "japanese": "まっすぐいってください",
+    "romaji": "Massugu itte kudasai",
+    "note": "'Massugu' means straight ahead.",
+    "survival": false
+  },
+
+  {
+    "id": "hotel-01",
+    "category": "hotel",
+    "english": "I have a reservation",
+    "japanese": "よやくしています",
+    "romaji": "Yoyaku shiteimasu",
+    "note": "Say your name after this, or show the booking confirmation.",
+    "survival": false
+  },
+  {
+    "id": "hotel-02",
+    "category": "hotel",
+    "english": "Check-in, please",
+    "japanese": "チェックインおねがいします",
+    "romaji": "Chekku-in onegai shimasu",
+    "note": "Most hotel staff understand 'check-in' in English too.",
+    "survival": false
+  },
+  {
+    "id": "hotel-03",
+    "category": "hotel",
+    "english": "Can I leave my luggage?",
+    "japanese": "にもつをあずけてもいいですか？",
+    "romaji": "Nimotsu wo azukete mo ii desu ka?",
+    "note": "Hotels and stations often store bags, even before check-in.",
+    "survival": false
+  },
+  {
+    "id": "hotel-04",
+    "category": "hotel",
+    "english": "What time is checkout?",
+    "japanese": "チェックアウトはなんじですか？",
+    "romaji": "Chekku-auto wa nanji desu ka?",
+    "note": "Usually 10am or 11am.",
+    "survival": false
+  },
+  {
+    "id": "hotel-05",
+    "category": "hotel",
+    "english": "The room key, please",
+    "japanese": "へやのかぎをおねがいします",
+    "romaji": "Heya no kagi wo onegai shimasu",
+    "note": "Many modern hotels use card keys.",
+    "survival": false
+  },
+  {
+    "id": "hotel-06",
+    "category": "hotel",
+    "english": "The Wi-Fi password, please",
+    "japanese": "Wi-Fiのパスワードをおしえてください",
+    "romaji": "Waifai no pasuwaado wo oshiete kudasai",
+    "note": "Usually printed on a card in the room.",
+    "survival": false
+  },
+  {
+    "id": "hotel-07",
+    "category": "hotel",
+    "english": "There is a problem with my room",
+    "japanese": "へやにもんだいがあります",
+    "romaji": "Heya ni mondai ga arimasu",
+    "note": "Then point or show what's wrong.",
+    "survival": false
+  },
+
+  {
+    "id": "emerg-01",
+    "category": "emergency",
+    "english": "Help!",
+    "japanese": "たすけて！",
+    "romaji": "Tasukete!",
+    "note": "Shout this in an emergency. People will come.",
+    "survival": false
+  },
+  {
+    "id": "emerg-02",
+    "category": "emergency",
+    "english": "I need a doctor",
+    "japanese": "いしゃがひつようです",
+    "romaji": "Isha ga hitsuyou desu",
+    "note": "Hotels can usually arrange a doctor who speaks English.",
+    "survival": false
+  },
+  {
+    "id": "emerg-03",
+    "category": "emergency",
+    "english": "I'm sick",
+    "japanese": "きぶんがわるいです",
+    "romaji": "Kibun ga warui desu",
+    "note": "Literally 'I feel bad'. Use at a pharmacy or clinic.",
+    "survival": false
+  },
+  {
+    "id": "emerg-04",
+    "category": "emergency",
+    "english": "I lost my passport",
+    "japanese": "パスポートをなくしました",
+    "romaji": "Pasupooto wo nakushimashita",
+    "note": "Go to the nearest police box (koban) for help.",
+    "survival": false
+  },
+  {
+    "id": "emerg-05",
+    "category": "emergency",
+    "english": "I lost my wallet",
+    "japanese": "さいふをなくしました",
+    "romaji": "Saifu wo nakushimashita",
+    "note": "Japan has amazing lost-and-found — check with police.",
+    "survival": false
+  },
+  {
+    "id": "emerg-06",
+    "category": "emergency",
+    "english": "Please call the police",
+    "japanese": "けいさつをよんでください",
+    "romaji": "Keisatsu wo yonde kudasai",
+    "note": "Police number is 110 in Japan.",
+    "survival": false
+  },
+  {
+    "id": "emerg-07",
+    "category": "emergency",
+    "english": "Please call an ambulance",
+    "japanese": "きゅうきゅうしゃをよんでください",
+    "romaji": "Kyuukyuusha wo yonde kudasai",
+    "note": "Ambulance number is 119 in Japan.",
+    "survival": false
+  },
+  {
+    "id": "emerg-08",
+    "category": "emergency",
+    "english": "Where is the hospital?",
+    "japanese": "びょういんはどこですか？",
+    "romaji": "Byouin wa doko desu ka?",
+    "note": "Ask at your hotel or a police box for directions.",
+    "survival": false
+  },
+
+  {
+    "id": "num-01",
+    "category": "numbers",
+    "english": "One",
+    "japanese": "いち",
+    "romaji": "Ichi",
+    "note": "",
+    "survival": false
+  },
+  {
+    "id": "num-02",
+    "category": "numbers",
+    "english": "Two",
+    "japanese": "に",
+    "romaji": "Ni",
+    "note": "",
+    "survival": false
+  },
+  {
+    "id": "num-03",
+    "category": "numbers",
+    "english": "Three",
+    "japanese": "さん",
+    "romaji": "San",
+    "note": "",
+    "survival": false
+  },
+  {
+    "id": "num-04",
+    "category": "numbers",
+    "english": "Four",
+    "japanese": "よん",
+    "romaji": "Yon",
+    "note": "Can also be 'shi', but 'yon' is more common.",
+    "survival": false
+  },
+  {
+    "id": "num-05",
+    "category": "numbers",
+    "english": "Five",
+    "japanese": "ご",
+    "romaji": "Go",
+    "note": "",
+    "survival": false
+  },
+  {
+    "id": "num-06",
+    "category": "numbers",
+    "english": "Today",
+    "japanese": "きょう",
+    "romaji": "Kyou",
+    "note": "",
+    "survival": false
+  },
+  {
+    "id": "num-07",
+    "category": "numbers",
+    "english": "Tomorrow",
+    "japanese": "あした",
+    "romaji": "Ashita",
+    "note": "",
+    "survival": false
+  },
+  {
+    "id": "num-08",
+    "category": "numbers",
+    "english": "Yesterday",
+    "japanese": "きのう",
+    "romaji": "Kinou",
+    "note": "",
+    "survival": false
+  },
+  {
+    "id": "num-09",
+    "category": "numbers",
+    "english": "Morning",
+    "japanese": "あさ",
+    "romaji": "Asa",
+    "note": "",
+    "survival": false
+  },
+  {
+    "id": "num-10",
+    "category": "numbers",
+    "english": "Afternoon",
+    "japanese": "ひる / ごご",
+    "romaji": "Hiru / Gogo",
+    "note": "'Hiru' is noon/daytime, 'gogo' is afternoon.",
+    "survival": false
+  },
+  {
+    "id": "num-11",
+    "category": "numbers",
+    "english": "Evening / Night",
+    "japanese": "よる",
+    "romaji": "Yoru",
+    "note": "",
+    "survival": false
+  },
+  {
+    "id": "num-12",
+    "category": "numbers",
+    "english": "Now",
+    "japanese": "いま",
+    "romaji": "Ima",
+    "note": "",
+    "survival": false
+  },
+  {
+    "id": "num-13",
+    "category": "numbers",
+    "english": "Later",
+    "japanese": "あとで",
+    "romaji": "Ato de",
+    "note": "",
+    "survival": false
+  },
+  {
+    "id": "num-14",
+    "category": "numbers",
+    "english": "Here",
+    "japanese": "ここ",
+    "romaji": "Koko",
+    "note": "Point while saying it for clarity.",
+    "survival": false
+  },
+  {
+    "id": "num-15",
+    "category": "numbers",
+    "english": "There",
+    "japanese": "そこ / あそこ",
+    "romaji": "Soko / Asoko",
+    "note": "'Soko' is nearby there, 'asoko' is far over there.",
+    "survival": false
+  },
+  {
+    "id": "num-16",
+    "category": "numbers",
+    "english": "Hot",
+    "japanese": "あつい",
+    "romaji": "Atsui",
+    "note": "For weather or temperature.",
+    "survival": false
+  },
+  {
+    "id": "num-17",
+    "category": "numbers",
+    "english": "Cold",
+    "japanese": "さむい",
+    "romaji": "Samui",
+    "note": "For weather. 'Tsumetai' is for cold things/drinks.",
+    "survival": false
+  },
+  {
+    "id": "num-18",
+    "category": "numbers",
+    "english": "Big",
+    "japanese": "おおきい",
+    "romaji": "Ookii",
+    "note": "",
+    "survival": false
+  },
+  {
+    "id": "num-19",
+    "category": "numbers",
+    "english": "Small",
+    "japanese": "ちいさい",
+    "romaji": "Chiisai",
+    "note": "",
+    "survival": false
+  }
+]
