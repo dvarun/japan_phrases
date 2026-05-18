@@ -1,0 +1,12 @@
+---
+interface Props {
+  tip: string;
+}
+
+const { tip } = Astro.props;
+---
+
+<div class="culture-tip" role="note">
+  <span class="culture-tip__icon" aria-hidden="true">💡</span>
+  <span>{tip}</span>
+</div>

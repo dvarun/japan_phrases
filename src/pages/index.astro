@@ -6,9 +6,20 @@ import SearchBar from '../components/SearchBar.astro';
 import PhraseCard from '../components/PhraseCard.astro';
 import SurvivalMode from '../components/SurvivalMode.astro';
 import EmptyState from '../components/EmptyState.astro';
+import CultureTip from '../components/CultureTip.astro';
 import '../styles/global.css';
 
 import phrases from '../data/phrases.json';
+
+const cultureTips: Record<string, string> = {
+  greetings: "A small bow goes a long way in Japan. People really appreciate even basic politeness from visitors.",
+  apologies: "'Sumimasen' is your Swiss army knife — it works as 'excuse me', 'sorry', and even 'thank you' depending on context.",
+  restaurants: "You usually pay at the register near the exit, not at your table. Tipping is not expected and can cause confusion.",
+  shopping: "Convenience stores (konbini) are open 24/7 and have great food, ATMs, free Wi-Fi, and even parcel delivery.",
+  transport: "Get a Suica or Pasmo IC card — it works on all trains, buses, vending machines, and most convenience stores.",
+  hotel: "Shoes are removed at the entrance in traditional ryokan. Most hotels expect check-in after 3 PM and checkout by 10–11 AM.",
+  emergency: "Police: 110 / Ambulance & Fire: 119. Police boxes (koban) are everywhere and officers are very helpful to tourists.",
+};
 
 const categoryMeta: Record<string, { label: string; emoji: string }> = {
   greetings: { label: 'Greetings & Basic Politeness', emoji: '👋' },
@@ -47,6 +58,7 @@ const grouped = categoryOrder.map((cat) => ({
           <span class="category-section__emoji" aria-hidden="true">{group.emoji}</span>
           {group.label}
         </h2>
+        {cultureTips[group.id] && <CultureTip tip={cultureTips[group.id]} />}
         <div class="phrase-cards">
           {group.phrases.map((p) => (
             <div id={`card-${p.id}`}>
@@ -76,10 +88,18 @@ const grouped = categoryOrder.map((cat) => ({
   <!-- Show-to-people modal -->
   <div class="modal-overlay" id="phrase-modal" aria-hidden="true" role="dialog" aria-label="Show phrase">
     <div class="modal">
-      <button class="modal__close" id="modal-close" aria-label="Close" type="button">✕</button>
+      <div class="modal__top-bar">
+        <button class="modal__close" id="modal-close" aria-label="Close" type="button">✕</button>
+        <div class="modal__size-controls">
+          <button class="modal__size-btn" data-size="sm" aria-label="Small text" type="button">A</button>
+          <button class="modal__size-btn active" data-size="md" aria-label="Medium text" type="button">A</button>
+          <button class="modal__size-btn" data-size="lg" aria-label="Large text" type="button">A+</button>
+          <button class="modal__size-btn" data-size="xl" aria-label="Extra large text" type="button">A++</button>
+        </div>
+      </div>
       <p class="modal__hint">Show this to the person you're speaking with</p>
       <p class="modal__english" id="modal-english"></p>
-      <p class="modal__japanese jp-text" id="modal-japanese"></p>
+      <p class="modal__japanese jp-text size-md" id="modal-japanese"></p>
       <p class="modal__romaji" id="modal-romaji"></p>
       <p class="modal__note" id="modal-note"></p>
     </div>
@@ -87,6 +107,8 @@ const grouped = categoryOrder.map((cat) => ({
 
   <script>
     const STORAGE_KEY = 'jap-favorites';
+    const THEME_KEY = 'jap-theme';
+    const SIZE_KEY = 'jap-modal-size';
 
     // DOM references
     const searchInput = document.getElementById('phrase-search') as HTMLInputElement;
@@ -94,6 +116,7 @@ const grouped = categoryOrder.map((cat) => ({
     const favToggle = document.getElementById('fav-toggle')!;
     const emptyState = document.getElementById('empty-state')!;
     const backToTop = document.getElementById('back-to-top')!;
+    const darkToggle = document.getElementById('dark-toggle')!;
     const allCards = document.querySelectorAll<HTMLElement>('.phrase-card');
     const allSections = document.querySelectorAll<HTMLElement>('.category-section');
     const allTabs = document.querySelectorAll<HTMLElement>('.category-nav__tab');
@@ -102,6 +125,28 @@ const grouped = categoryOrder.map((cat) => ({
     // State
     let favorites: Set<string> = new Set(loadFavorites());
     let showFavOnly = false;
+
+    // --- Dark Mode ---
+    function initTheme() {
+      const saved = localStorage.getItem(THEME_KEY);
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = saved ? saved === 'dark' : prefersDark;
+      applyTheme(isDark);
+    }
+
+    function applyTheme(isDark: boolean) {
+      document.documentElement.classList.toggle('dark', isDark);
+      darkToggle.textContent = isDark ? '☀️' : '🌙';
+      darkToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+
+    darkToggle.addEventListener('click', () => {
+      const isDark = !document.documentElement.classList.contains('dark');
+      applyTheme(isDark);
+      localStorage.setItem(THEME_KEY, isDark ? 'dark' : 'light');
+    });
+
+    initTheme();
 
     // --- Favorites persistence ---
     function loadFavorites(): string[] {
@@ -121,8 +166,8 @@ const grouped = categoryOrder.map((cat) => ({
         const id = btn.dataset.favId!;
         const isFav = favorites.has(id);
         btn.textContent = isFav ? '♥' : '♡';
-        btn.setAttribute('aria-label', isFav ? `Remove from favorites` : `Add to favorites`);
-        btn.style.color = isFav ? '#E8A0BF' : '';
+        btn.setAttribute('aria-label', isFav ? 'Remove from favorites' : 'Add to favorites');
+        btn.style.color = isFav ? 'var(--sakura-dark)' : '';
       });
     }
 
@@ -147,21 +192,16 @@ const grouped = categoryOrder.map((cat) => ({
         if (visible) visibleCount++;
       });
 
-      // Hide sections with no visible cards
       allSections.forEach((section) => {
         const visibleCards = section.querySelectorAll('.phrase-card:not(.hidden)');
         section.style.display = visibleCards.length === 0 ? 'none' : '';
       });
 
-      // Hide survival section during search or fav-only mode
       if (survival) {
         survival.style.display = (query || showFavOnly) ? 'none' : '';
       }
 
-      // Empty state
       emptyState.classList.toggle('visible', visibleCount === 0);
-
-      // Clear button
       clearBtn.classList.toggle('visible', query.length > 0);
     }
 
@@ -185,11 +225,10 @@ const grouped = categoryOrder.map((cat) => ({
       filterCards();
     });
 
-    // --- Heart buttons (event delegation) ---
+    // --- Heart & copy buttons (event delegation) ---
     document.addEventListener('click', (e) => {
       const target = e.target as HTMLElement;
 
-      // Favorite toggle
       if (target.classList.contains('phrase-card__fav')) {
         const id = target.dataset.favId!;
         if (favorites.has(id)) {
@@ -202,7 +241,6 @@ const grouped = categoryOrder.map((cat) => ({
         if (showFavOnly) filterCards();
       }
 
-      // Copy button
       if (target.closest('.phrase-card__copy')) {
         const btn = target.closest('.phrase-card__copy') as HTMLButtonElement;
         const text = btn.dataset.copy || '';
@@ -225,6 +263,25 @@ const grouped = categoryOrder.map((cat) => ({
     const modalJapanese = document.getElementById('modal-japanese')!;
     const modalRomaji = document.getElementById('modal-romaji')!;
     const modalNote = document.getElementById('modal-note')!;
+    const sizeBtns = document.querySelectorAll<HTMLButtonElement>('.modal__size-btn');
+
+    let currentSize = localStorage.getItem(SIZE_KEY) || 'md';
+
+    function setModalSize(size: string) {
+      currentSize = size;
+      modalJapanese.className = 'modal__japanese jp-text size-' + size;
+      sizeBtns.forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.size === size);
+      });
+      localStorage.setItem(SIZE_KEY, size);
+    }
+
+    sizeBtns.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setModalSize(btn.dataset.size!);
+      });
+    });
 
     function openModal(card: HTMLElement) {
       const en = card.querySelector('.phrase-card__english')?.textContent || '';
@@ -244,6 +301,7 @@ const grouped = categoryOrder.map((cat) => ({
         modalNote.classList.remove('visible');
       }
 
+      setModalSize(currentSize);
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
@@ -266,7 +324,6 @@ const grouped = categoryOrder.map((cat) => ({
       if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
     });
 
-    // Open modal on card body click (but not on buttons inside)
     document.addEventListener('click', (e) => {
       const target = e.target as HTMLElement;
       if (target.closest('.phrase-card__fav') || target.closest('.phrase-card__copy')) return;
@@ -300,7 +357,6 @@ const grouped = categoryOrder.map((cat) => ({
         if (section) {
           section.scrollIntoView({ behavior: 'smooth' });
         }
-        // Also clear search when navigating by category
         if (searchInput.value) {
           searchInput.value = '';
           filterCards();
