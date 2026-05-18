@@ -565,6 +565,106 @@
   },
 
   {
+    "id": "drink-01",
+    "category": "drinking",
+    "english": "Cheers!",
+    "japanese": "かんぱい！",
+    "romaji": "Kanpai!",
+    "note": "The classic Japanese toast. Raise your glass and say it!",
+    "survival": false
+  },
+  {
+    "id": "drink-02",
+    "category": "drinking",
+    "english": "One beer, please",
+    "japanese": "ビールをひとつおねがいします",
+    "romaji": "Biiru wo hitotsu onegai shimasu",
+    "note": "Works at any bar, izakaya, or restaurant.",
+    "survival": false
+  },
+  {
+    "id": "drink-03",
+    "category": "drinking",
+    "english": "What cocktails do you have?",
+    "japanese": "カクテルはなにがありますか？",
+    "romaji": "Kakuteru wa nani ga arimasu ka?",
+    "note": "Good for cocktail bars. Many have picture menus.",
+    "survival": false
+  },
+  {
+    "id": "drink-04",
+    "category": "drinking",
+    "english": "Do you have a drinks menu?",
+    "japanese": "ドリンクメニューはありますか？",
+    "romaji": "Dorinku menyuu wa arimasu ka?",
+    "note": "Most bars and izakaya have a separate drinks menu.",
+    "survival": false
+  },
+  {
+    "id": "drink-05",
+    "category": "drinking",
+    "english": "I'll have the same, please",
+    "japanese": "おなじものをおねがいします",
+    "romaji": "Onaji mono wo onegai shimasu",
+    "note": "Point at someone else's drink or your empty glass.",
+    "survival": false
+  },
+  {
+    "id": "drink-06",
+    "category": "drinking",
+    "english": "One more, please",
+    "japanese": "もういっぱいおねがいします",
+    "romaji": "Mou ippai onegai shimasu",
+    "note": "Hold up your empty glass for extra clarity.",
+    "survival": false
+  },
+  {
+    "id": "drink-07",
+    "category": "drinking",
+    "english": "What Japanese sake do you recommend?",
+    "japanese": "おすすめのにほんしゅはなんですか？",
+    "romaji": "Osusume no nihonshu wa nan desu ka?",
+    "note": "'Nihonshu' is Japanese sake. Staff love recommending.",
+    "survival": false
+  },
+  {
+    "id": "drink-08",
+    "category": "drinking",
+    "english": "Is there a cover charge?",
+    "japanese": "チャージりょうきんはありますか？",
+    "romaji": "Chaaji ryoukin wa arimasu ka?",
+    "note": "Many bars have a small cover (otoshi) that includes a snack.",
+    "survival": false
+  },
+  {
+    "id": "drink-09",
+    "category": "drinking",
+    "english": "Something sweet, please",
+    "japanese": "あまいものをおねがいします",
+    "romaji": "Amai mono wo onegai shimasu",
+    "note": "Good for fruity cocktails or sweet sake.",
+    "survival": false
+  },
+  {
+    "id": "drink-10",
+    "category": "drinking",
+    "english": "Non-alcoholic drink, please",
+    "japanese": "ノンアルコールのドリンクをおねがいします",
+    "romaji": "Non-arukooru no dorinku wo onegai shimasu",
+    "note": "Japan has great non-alcoholic beer and cocktail options.",
+    "survival": false
+  },
+  {
+    "id": "drink-11",
+    "category": "drinking",
+    "english": "The bill, please",
+    "japanese": "おかいけいおねがいします",
+    "romaji": "Okaikei onegai shimasu",
+    "note": "Same phrase as restaurants. Pay at the bar or register.",
+    "survival": false
+  },
+
+  {
     "id": "num-01",
     "category": "numbers",
     "english": "One",

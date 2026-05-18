@@ -17,6 +17,7 @@ const cultureTips: Record<string, string> = {
   restaurants: "You usually pay at the register near the exit, not at your table. Tipping is not expected and can cause confusion.",
   shopping: "Convenience stores (konbini) are open 24/7 and have great food, ATMs, free Wi-Fi, and even parcel delivery.",
   transport: "Get a Suica or Pasmo IC card — it works on all trains, buses, vending machines, and most convenience stores.",
+  drinking: "Many bars charge a small cover fee (otoshi) which includes a snack. Izakayas are casual and tourist-friendly — perfect for trying local drinks.",
   hotel: "Shoes are removed at the entrance in traditional ryokan. Most hotels expect check-in after 3 PM and checkout by 10–11 AM.",
   emergency: "Police: 110 / Ambulance & Fire: 119. Police boxes (koban) are everywhere and officers are very helpful to tourists.",
 };
@@ -27,12 +28,13 @@ const categoryMeta: Record<string, { label: string; emoji: string }> = {
   restaurants: { label: 'Restaurants & Cafes', emoji: '🍜' },
   shopping: { label: 'Convenience Store & Shopping', emoji: '🛍️' },
   transport: { label: 'Train, Taxi & Directions', emoji: '🚃' },
+  drinking: { label: 'Bars & Drinks', emoji: '🍺' },
   hotel: { label: 'Hotel & Accommodation', emoji: '🏨' },
   emergency: { label: 'Emergency & Health', emoji: '🚨' },
   numbers: { label: 'Numbers, Time & Useful Words', emoji: '🔢' },
 };
 
-const categoryOrder = ['greetings', 'apologies', 'restaurants', 'shopping', 'transport', 'hotel', 'emergency', 'numbers'];
+const categoryOrder = ['greetings', 'apologies', 'restaurants', 'shopping', 'transport', 'drinking', 'hotel', 'emergency', 'numbers'];
 const survivalPhrases = phrases.filter((p) => p.survival);
 const grouped = categoryOrder.map((cat) => ({
   id: cat,
