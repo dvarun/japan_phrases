@@ -47,12 +47,18 @@ html.dark {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, a {
+  touch-action: manipulation;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--nav-height) + var(--search-height) + 16px);
+  scroll-padding-top: 16px;
   -webkit-text-size-adjust: 100%;
+  overscroll-behavior: none;
 }
 
 body {
@@ -65,6 +71,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background 0.3s ease, color 0.3s ease;
+  overscroll-behavior-y: none;
+  padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
 }
 
 /* ===== Typography ===== */
@@ -199,13 +207,24 @@ h1, h2, h3 {
   line-height: 1;
 }
 
-/* ===== Search Bar ===== */
+/* ===== Search / Bottom Bar ===== */
 .search-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 150;
   padding: 10px 16px;
-  background: var(--cream);
+  padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  background: color-mix(in srgb, var(--cream) 85%, transparent);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  backdrop-filter: blur(16px) saturate(1.5);
+  border-top: 1px solid var(--cream-dark);
+  box-shadow: 0 -2px 12px rgba(45, 58, 74, 0.08);
   display: flex;
   gap: 8px;
   align-items: center;
+  transition: background 0.3s ease;
 }
 
 .search-bar__input-wrap {
@@ -561,7 +580,7 @@ h1, h2, h3 {
 /* ===== Footer ===== */
 .footer {
   text-align: center;
-  padding: 40px 16px;
+  padding: 40px 16px 16px;
   color: var(--navy-light);
   font-size: 0.82rem;
   margin-top: 32px;
@@ -580,7 +599,7 @@ h1, h2, h3 {
 /* ===== Back to Top ===== */
 .back-to-top {
   position: fixed;
-  bottom: 24px;
+  bottom: calc(74px + env(safe-area-inset-bottom, 0px));
   right: 20px;
   width: 48px;
   height: 48px;
@@ -819,8 +838,13 @@ button:focus-visible {
 }
 
 @media (min-width: 768px) {
+  html {
+    scroll-padding-top: calc(var(--nav-height) + var(--search-height) + 16px);
+  }
+
   body {
     font-size: 17px;
+    padding-bottom: 0;
   }
 
   .hero {
@@ -874,8 +898,21 @@ button:focus-visible {
   }
 
   .search-bar {
+    position: static;
+    border-top: none;
+    box-shadow: none;
+    padding-bottom: 10px;
     max-width: 480px;
     margin: 0 auto;
+  }
+
+  .back-to-top {
+    bottom: 24px;
+  }
+
+  .install-banner {
+    bottom: 0;
+    transform: translateY(100%);
   }
 }
 
@@ -944,7 +981,7 @@ button:focus-visible {
 /* ===== PWA Install Banner ===== */
 .install-banner {
   position: fixed;
-  bottom: 0;
+  bottom: calc(64px + env(safe-area-inset-bottom, 0px));
   left: 0;
   right: 0;
   z-index: 200;
@@ -952,7 +989,7 @@ button:focus-visible {
   border-top: 1.5px solid var(--cream-dark);
   box-shadow: 0 -2px 16px rgba(45, 58, 74, 0.1);
   padding: 14px 16px;
-  transform: translateY(100%);
+  transform: translateY(calc(100% + 64px + env(safe-area-inset-bottom, 0px)));
   transition: transform 0.35s ease;
 }
 

@@ -124,6 +124,11 @@ const grouped = categoryOrder.map((cat) => ({
     const allTabs = document.querySelectorAll<HTMLElement>('.category-nav__tab');
     const survival = document.querySelector<HTMLElement>('.survival');
 
+    // Haptic feedback for native-like feel
+    function haptic(ms = 10) {
+      try { navigator.vibrate?.(ms); } catch {}
+    }
+
     // State
     let favorites: Set<string> = new Set(loadFavorites());
     let showFavOnly = false;
@@ -143,6 +148,7 @@ const grouped = categoryOrder.map((cat) => ({
     }
 
     darkToggle.addEventListener('click', () => {
+      haptic();
       const isDark = !document.documentElement.classList.contains('dark');
       applyTheme(isDark);
       localStorage.setItem(THEME_KEY, isDark ? 'dark' : 'light');
@@ -213,6 +219,7 @@ const grouped = categoryOrder.map((cat) => ({
     });
 
     clearBtn.addEventListener('click', () => {
+      haptic();
       searchInput.value = '';
       filterCards();
       searchInput.focus();
@@ -220,6 +227,7 @@ const grouped = categoryOrder.map((cat) => ({
 
     // --- Favorites toggle ---
     favToggle.addEventListener('click', () => {
+      haptic();
       showFavOnly = !showFavOnly;
       favToggle.classList.toggle('active', showFavOnly);
       favToggle.textContent = showFavOnly ? '♥' : '♡';
@@ -232,6 +240,7 @@ const grouped = categoryOrder.map((cat) => ({
       const target = e.target as HTMLElement;
 
       if (target.classList.contains('phrase-card__fav')) {
+        haptic();
         const id = target.dataset.favId!;
         if (favorites.has(id)) {
           favorites.delete(id);
@@ -244,6 +253,7 @@ const grouped = categoryOrder.map((cat) => ({
       }
 
       if (target.closest('.phrase-card__copy')) {
+        haptic(15);
         const btn = target.closest('.phrase-card__copy') as HTMLButtonElement;
         const text = btn.dataset.copy || '';
         navigator.clipboard.writeText(text).then(() => {
@@ -286,6 +296,7 @@ const grouped = categoryOrder.map((cat) => ({
     });
 
     function openModal(card: HTMLElement) {
+      haptic(15);
       const en = card.querySelector('.phrase-card__english')?.textContent || '';
       const jp = card.querySelector('.phrase-card__japanese')?.textContent || '';
       const rom = card.querySelector('.phrase-card__romaji')?.textContent || '';
@@ -353,6 +364,7 @@ const grouped = categoryOrder.map((cat) => ({
     // --- Smooth scroll for tabs ---
     allTabs.forEach((tab) => {
       tab.addEventListener('click', (e) => {
+        haptic();
         e.preventDefault();
         const targetId = tab.dataset.category!;
         const section = document.getElementById(targetId);
@@ -379,6 +391,7 @@ const grouped = categoryOrder.map((cat) => ({
     }, { passive: true });
 
     backToTop.addEventListener('click', () => {
+      haptic();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
