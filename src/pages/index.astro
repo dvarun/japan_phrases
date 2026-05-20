@@ -382,6 +382,43 @@ const grouped = categoryOrder.map((cat) => ({
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
+    // --- PWA Install Prompt ---
+    const installBanner = document.getElementById('install-banner')!;
+    const installBtn = document.getElementById('install-btn')!;
+    const installDismiss = document.getElementById('install-dismiss')!;
+    let deferredPrompt: any = null;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const dismissed = sessionStorage.getItem('jap-install-dismissed');
+      if (!dismissed) {
+        installBanner.classList.add('visible');
+        installBanner.setAttribute('aria-hidden', 'false');
+      }
+    });
+
+    installBtn.addEventListener('click', async () => {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      installBanner.classList.remove('visible');
+      installBanner.setAttribute('aria-hidden', 'true');
+    });
+
+    installDismiss.addEventListener('click', () => {
+      installBanner.classList.remove('visible');
+      installBanner.setAttribute('aria-hidden', 'true');
+      sessionStorage.setItem('jap-install-dismissed', '1');
+    });
+
+    window.addEventListener('appinstalled', () => {
+      installBanner.classList.remove('visible');
+      installBanner.setAttribute('aria-hidden', 'true');
+      deferredPrompt = null;
+    });
+
     // --- Init ---
     renderFavorites();
   </script>

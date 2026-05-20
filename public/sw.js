@@ -1,9 +1,18 @@
-const CACHE_NAME = 'jp-phrasebook-v1';
+const CACHE_NAME = 'jp-phrasebook-v2';
 
 const PRECACHE_URLS = [
   '/',
   '/favicon.svg',
+  '/icon-maskable.svg',
+  '/icon-192.png',
+  '/icon-512.png',
   '/manifest.json',
+];
+
+// Google Fonts to cache after first load
+const FONT_ORIGINS = [
+  'https://fonts.googleapis.com',
+  'https://fonts.gstatic.com',
 ];
 
 self.addEventListener('install', (event) => {
@@ -24,16 +33,19 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   const { request } = event;
-
   if (request.method !== 'GET') return;
 
-  // For navigation and same-origin requests: network-first, fall back to cache
-  if (request.mode === 'navigate' || new URL(request.url).origin === location.origin) {
+  const url = new URL(request.url);
+
+  // Same-origin assets (HTML, CSS, JS): network-first, cache fallback
+  if (url.origin === self.location.origin) {
     event.respondWith(
       fetch(request)
         .then((response) => {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+          if (response.ok) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+          }
           return response;
         })
         .catch(() => caches.match(request))
@@ -41,15 +53,20 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // For external resources (fonts, etc.): cache-first
-  event.respondWith(
-    caches.match(request).then((cached) => {
-      if (cached) return cached;
-      return fetch(request).then((response) => {
-        const clone = response.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
-        return response;
-      });
-    })
-  );
+  // Google Fonts: cache-first (they're versioned/immutable)
+  if (FONT_ORIGINS.some((origin) => url.origin === origin)) {
+    event.respondWith(
+      caches.match(request).then((cached) => {
+        if (cached) return cached;
+        return fetch(request).then((response) => {
+          if (response.ok) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+          }
+          return response;
+        });
+      })
+    );
+    return;
+  }
 });
