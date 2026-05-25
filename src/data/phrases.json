@@ -663,6 +663,123 @@
     "note": "Same phrase as restaurants. Pay at the bar or register.",
     "survival": false
   },
+  {
+    "id": "drink-12",
+    "category": "drinking",
+    "english": "Do you have sake?",
+    "japanese": "にほんしゅはありますか？",
+    "romaji": "Nihonshu wa arimasu ka?",
+    "note": "Say 'nihonshu' — just 'sake' can mean any alcohol in Japanese.",
+    "survival": false
+  },
+  {
+    "id": "drink-13",
+    "category": "drinking",
+    "english": "Hot sake, please",
+    "japanese": "あつかんをおねがいします",
+    "romaji": "Atsukan wo onegai shimasu",
+    "note": "Warmed sake, great in winter. A classic way to drink it.",
+    "survival": false
+  },
+  {
+    "id": "drink-14",
+    "category": "drinking",
+    "english": "Cold sake, please",
+    "japanese": "れいしゅをおねがいします",
+    "romaji": "Reishu wo onegai shimasu",
+    "note": "Chilled sake. Best for premium sakes to taste the full flavor.",
+    "survival": false
+  },
+  {
+    "id": "drink-15",
+    "category": "drinking",
+    "english": "What types of sake do you have?",
+    "japanese": "どんなにほんしゅがありますか？",
+    "romaji": "Donna nihonshu ga arimasu ka?",
+    "note": "They may offer junmai, ginjo, daiginjo, and more.",
+    "survival": false
+  },
+  {
+    "id": "drink-16",
+    "category": "drinking",
+    "english": "Junmai sake, please",
+    "japanese": "じゅんまいしゅをおねがいします",
+    "romaji": "Junmai-shu wo onegai shimasu",
+    "note": "Pure rice sake, no added alcohol. Full-bodied and rich.",
+    "survival": false
+  },
+  {
+    "id": "drink-17",
+    "category": "drinking",
+    "english": "Daiginjo sake, please",
+    "japanese": "だいぎんじょうをおねがいします",
+    "romaji": "Daiginjo wo onegai shimasu",
+    "note": "Premium sake — light, fruity, and aromatic. Rice polished to 50%+.",
+    "survival": false
+  },
+  {
+    "id": "drink-18",
+    "category": "drinking",
+    "english": "Can I try a small tasting?",
+    "japanese": "ちょっとあじみできますか？",
+    "romaji": "Chotto ajimi dekimasu ka?",
+    "note": "Many sake bars let you sample before ordering a full glass.",
+    "survival": false
+  },
+  {
+    "id": "drink-19",
+    "category": "drinking",
+    "english": "Dry sake, please",
+    "japanese": "からくちのおさけをおねがいします",
+    "romaji": "Karakuchi no osake wo onegai shimasu",
+    "note": "'Karakuchi' means dry. Crisp and clean-tasting.",
+    "survival": false
+  },
+  {
+    "id": "drink-20",
+    "category": "drinking",
+    "english": "Sweet sake, please",
+    "japanese": "あまくちのおさけをおねがいします",
+    "romaji": "Amakuchi no osake wo onegai shimasu",
+    "note": "'Amakuchi' means sweet. Smooth and mellow flavor.",
+    "survival": false
+  },
+  {
+    "id": "drink-21",
+    "category": "drinking",
+    "english": "Local sake, please",
+    "japanese": "じざけをおねがいします",
+    "romaji": "Jizake wo onegai shimasu",
+    "note": "'Jizake' is locally brewed sake. Every region has its own.",
+    "survival": false
+  },
+  {
+    "id": "drink-22",
+    "category": "drinking",
+    "english": "Sparkling sake, please",
+    "japanese": "スパークリングにほんしゅをおねがいします",
+    "romaji": "Supaakuringu nihonshu wo onegai shimasu",
+    "note": "Fizzy sake — light and refreshing. Great for beginners.",
+    "survival": false
+  },
+  {
+    "id": "drink-23",
+    "category": "drinking",
+    "english": "One glass of sake, please",
+    "japanese": "にほんしゅをいっぱいおねがいします",
+    "romaji": "Nihonshu wo ippai onegai shimasu",
+    "note": "Often served in a small wooden box (masu) or ceramic cup.",
+    "survival": false
+  },
+  {
+    "id": "drink-24",
+    "category": "drinking",
+    "english": "A sake flight / tasting set, please",
+    "japanese": "のみくらべセットをおねがいします",
+    "romaji": "Nomikurabe setto wo onegai shimasu",
+    "note": "A set of 3 small cups to compare different sakes. Perfect for exploring.",
+    "survival": false
+  },
 
   {
     "id": "num-01",
